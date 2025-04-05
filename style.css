@@ -1,11 +1,12 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap');
+
 body {
     font-family: "Spectral", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #014d4e;
-    color:white;
+    color: white;
 }
 
 html, body {
@@ -16,126 +17,105 @@ html, body {
     flex-direction: column;
 }
 
-
-
 /* Header */
 header {
     background-color: #013F40;
-    padding: 0px 20px;
+    padding: 10px 20px;
+    position: relative;
 }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+    width: clamp(120px, 25vw, 300px);
+    border-radius: 10%;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Nav Links */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 10px;
+        display: block;
+        font-size: 1.3em;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
+/* Main Content */
 main {
-    flex: 1;  /* This makes the main content expand and push the footer down */
+    flex: 1;
     padding: 20px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Spectral', serif;
-    font-size: 50px;
-
+    font-size: clamp(28px, 5vw, 50px);
 }
 
-.navbar {
-    display: flex;
-    align-items: center; /* Aligns items vertically */
-    justify-content: space-between; /* Logo on left, nav on right */
-    padding: 5px 20px;
-    position: relative;
-    min-height: 80px;
-}
-
-.logo {
-    height: auto;
-    max-width: 100%; /* Prevents overflow */
-    width: clamp(150px, 25vw, 300px); /* Adjust min, ideal, and max size */
-    border-radius: 10%;
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    .logo {
-        width: clamp(120px, 30vw, 250px); /* Keep it readable on tablets */
-    }
-}
-
-@media (max-height: 500px) {
-    .logo {
-        width: clamp(100px, 20vw, 180px); /* Prevents it from getting too big */
-    }
-}
-
-
-nav {
-    display: flex;
-    gap: 20px; /* Space between links */
-    align-items: center;
-    margin-left: auto; /* Push nav to the right */
-    margin-top: 10px; /* Adjust to position correctly */
-}
-
-nav a {
+/* Buttons */
+button {
+    background-color: #026869; /* Your original button color */
     color: white;
-    text-decoration: none;
-    font-size: 1.45em;
-    font-weight: bold;
-    padding: 10px 6px; /* Adds padding for the box effect */
-    border-radius: 5px; /* Smooth corners */
-    transition: background 0.3s, color 0.3s;
-}
-
-nav a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Light grayish box effect */
-    color: white; /* Keeps text color white */
-    text-decoration: none; /* Removes underline */
-}
-button {
-    background-color: white; /* White background for contrast */
-    color: #b61e2e; /* Matches your theme */
-    border: 2px solid #b61e2e; /* Adds a stylish border */
-    padding: 12px 24px; /* Good size for readability */
-    font-size: 1.2em; /* Slightly larger text */
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px; /* Smooth rounded edges */
-    transition: all 0.3s ease-in-out; /* Smooth hover animation */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-button:hover {
-    background-color: #b61e2e; /* Change to theme red on hover */
-    color: white; /* Text turns white */
-    border-color: white; /* Border turns white */
-    transform: scale(1.05); /* Slight pop effect */
-}
-.contact-info p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #026869; /* A slightly lighter teal for a cohesive look */
-    color: white; /* Keeps text readable */
-    border: 2px solid #014D4E; /* Matches the deep teal color */
+    border: 2px solid #014D4E;
     padding: 12px 24px;
     font-size: 1.2em;
     font-weight: bold;
@@ -147,22 +127,20 @@ button {
 
 button:hover {
     background-color: #013F40; /* Slightly darker teal on hover */
-    color: #F5E8C7; /* Light cream color for contrast */
-    border-color: #F5E8C7; /* Matches hover text color */
+    color: white;
+    border-color: white;
     transform: scale(1.05);
 }
-
 
 /* Image Container */
 .image-container {
     text-align: center;
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 .bottom-image {
-    width: 40%;  /* Adjust size as needed */
-    height: 10%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 600px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -174,5 +152,4 @@ footer {
     text-align: center;
     padding: 10px;
     width: 100%;
-    position: relative;
 }
