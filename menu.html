@@ -10,45 +10,81 @@
 <body>
     <header>
         <div class="navbar">
-            <img src="images/6times.png" alt="Company Logo" class="logo"> 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+          <img src="images/6times.png" alt="Company Logo" class="logo">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
         </div>
-    </header>
+      </header>
     
     <main>
         <h2>Our Menu</h2>
         <p>Browse our selection of carefully curated meal options for weddings, corporate events, and large gatherings.</p>
 
         <section class="menu-category">
-            <h3>Wedding Favorites</h3>
+            <h3>Signature Entrées</h3>
             <ul>
-                <li><strong>Grilled Salmon</strong> - Served with lemon butter sauce and seasonal vegetables.</li>
-                <li><strong>Stuffed Chicken Breast</strong> - Filled with spinach, ricotta, and sun-dried tomatoes.</li>
-                <li><strong>Classic Prime Rib</strong> - Slow-roasted and served with au jus and garlic mashed potatoes.</li>
+                <li><strong>Tri Tip Steak</strong> with roasted potatoes and green beans</li>
+                <li><strong>Marinated Flank Steak</strong> with baked potato and veggies</li>
+                <li><strong>Smoked Brisket</strong> with mac n cheese and collard greens</li>
+                <li><strong>Roasted Turkey Breast</strong> with mashed potatoes, veggies & gravy</li>
+                <li><strong>Salmon Filets</strong> with rice pilaf and mixed vegetables</li>
+                <li><strong>Pulled Pork Sandwiches</strong> on cornbread buns with mac n cheese</li>
+                <li><strong>Smoked Pork Loin</strong> with green beans and mac n cheese</li>
             </ul>
         </section>
 
         <section class="menu-category">
-            <h3>Corporate Catering</h3>
+            <h3>Italian Favorites</h3>
             <ul>
-                <li><strong>Gourmet Sandwich Platter</strong> - An assortment of freshly made sandwiches with premium ingredients.</li>
-                <li><strong>Classic Caesar Salad</strong> - Crisp romaine, parmesan cheese, and homemade croutons.</li>
-                <li><strong>Pasta Primavera</strong> - Fresh seasonal vegetables tossed with penne in a light garlic sauce.</li>
+                <li><strong>Chicken Alfredo</strong> with breadsticks</li>
+                <li><strong>Lasagna</strong> with garlic knots</li>
+                <li><strong>Calzones</strong> with cookies</li>
+                <li><strong>Pesto Chicken Pasta</strong> with garlic bread</li>
+                <li><strong>Ziti Bake</strong> with knots</li>
+                <li><strong>Stuffed Shells</strong> with marinara sauce</li>
+                <li><strong>Beef Stroganoff</strong> with dinner rolls</li>
+                <li><strong>Chicken Parm Sandwiches</strong> with chips</li>
+            </ul>
+        </section>
+
+
+        <section class="menu-category">
+            <h3>Global Dishes</h3>
+            <ul>
+                <li><strong>Barbacoa Bowls</strong> with Mexican rice and cold toppings</li>
+                <li><strong>Gyros</strong> with pitas, tzatziki, and Greek salad</li>
+                <li><strong>Teriyaki Chicken</strong> with jasmine rice</li>
+                <li><strong>General Tso's Chicken</strong> with sautéed veggies</li>
+                <li><strong>Tikka Masala</strong> with rice and naan</li>
+                <li><strong>Butter Chicken</strong> with rice and naan</li>
+                <li><strong>Cuban Beef</strong> with mashed potatoes and dinner rolls</li>
             </ul>
         </section>
 
         <section class="menu-category">
-            <h3>Casual Event Specials</h3>
+            <h3>Comfort Classics</h3>
             <ul>
-                <li><strong>BBQ Pulled Pork Sliders</strong> - Slow-cooked pork with house-made barbecue sauce.</li>
-                <li><strong>Loaded Mac & Cheese</strong> - Creamy mac & cheese topped with crispy bacon and breadcrumbs.</li>
-                <li><strong>Grilled Veggie Wraps</strong> - A healthy and delicious vegetarian option.</li>
+                <li><strong>Smoked Chicken Wings</strong> with sauces and loaded potato skins</li>
+                <li><strong>Grilled Cheese</strong> with tomato soup and chips</li>
+                <li><strong>Frisco Melts</strong> with fries</li>
+                <li><strong>Sloppy Joes</strong> with chips</li>
+                <li><strong>Burgers</strong> with toppings bar and tater tots</li>
+                <li><strong>Breakfast Burritos</strong> with home fries</li>
+                <li><strong>French Toast</strong> with bacon and potatoes</li>
             </ul>
         </section>
+
+        
+
+        
 
         <p><em>Looking for something custom? Contact us to create a menu that fits your event!</em></p>
     </main>
@@ -56,5 +92,13 @@
     <footer>
         <p>© 2025 College Meals on Wheels. All Rights Reserved.</p>
     </footer>
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+      
+        toggleButton.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+      </script>
 </body>
 </html>

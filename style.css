@@ -51,20 +51,6 @@ h2 {
     border-radius: 10%;
 }
 
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    .logo {
-        width: clamp(120px, 30vw, 250px); /* Keep it readable on tablets */
-    }
-}
-
-@media (max-height: 500px) {
-    .logo {
-        width: clamp(100px, 20vw, 180px); /* Prevents it from getting too big */
-    }
-}
-
-
 nav {
     display: flex;
     gap: 20px; /* Space between links */
@@ -88,25 +74,7 @@ nav a:hover {
     color: white; /* Keeps text color white */
     text-decoration: none; /* Removes underline */
 }
-button {
-    background-color: white; /* White background for contrast */
-    color: #b61e2e; /* Matches your theme */
-    border: 2px solid #b61e2e; /* Adds a stylish border */
-    padding: 12px 24px; /* Good size for readability */
-    font-size: 1.2em; /* Slightly larger text */
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px; /* Smooth rounded edges */
-    transition: all 0.3s ease-in-out; /* Smooth hover animation */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
 
-button:hover {
-    background-color: #b61e2e; /* Change to theme red on hover */
-    color: white; /* Text turns white */
-    border-color: white; /* Border turns white */
-    transform: scale(1.05); /* Slight pop effect */
-}
 .contact-info p {
     font-size: 1.2em;
     margin: 10px 0;
@@ -152,6 +120,15 @@ button:hover {
     transform: scale(1.05);
 }
 
+.menu-category h3 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    color: white;
+}
+
+
 
 /* Image Container */
 .image-container {
@@ -175,4 +152,46 @@ footer {
     padding: 10px;
     width: 100%;
     position: relative;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Show button only on small screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #013F40;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
